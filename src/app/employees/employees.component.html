@@ -1,0 +1,11 @@
+<h2>{{employee.firstName|uppercase}} Details</h2>
+<div><span>id: </span>{{employee.id}}</div>
+<div><span>firstname: </span>{{employee.firstName}}</div>
+<div><span>lastname: </span>{{employee.lastName}}</div>
+<div><span>email: </span>{{employee.email}}</div>
+<div>
+  <label for="firstName">Employee firstname: </label>
+  <input id="firstName" [(ngModel)]="employee.firstName" placeholder="firstname">
+</div>
+
+
