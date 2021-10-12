@@ -1,11 +1,28 @@
-<h2>{{employee.firstName|uppercase}} Details</h2>
-<div><span>id: </span>{{employee.id}}</div>
-<div><span>firstname: </span>{{employee.firstName}}</div>
-<div><span>lastname: </span>{{employee.lastName}}</div>
-<div><span>email: </span>{{employee.email}}</div>
-<div>
-  <label for="firstName">Employee firstname: </label>
-  <input id="firstName" [(ngModel)]="employee.firstName" placeholder="firstname">
-</div>
+<h2>Employees</h2>
+<ul class="employees">
+  <li *ngFor="let employee of employees"
+      (click)="onSelect(employee)" [class.selected]="employee === selectedEmployee">
+    <span class="badge">{{employee.id}}</span>
+    {{employee.firstName}} {{employee.lastName}}
+  </li>
+  <div *ngIf="selectedEmployee">
+    <h2>{{selectedEmployee.firstName | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedEmployee.id}}</div>
+    <div>
+      <label for="employee-email">Employee email: </label>
+      <input id="employee-email" [(ngModel)]="selectedEmployee.email"
+             placeholder="email">
+    </div>
+  </div>
+</ul>
+<!--<h2>{{employee.firstName|uppercase}} Details</h2>-->
+<!--<div><span>id: </span>{{employee.id}}</div>-->
+<!--<div><span>firstname: </span>{{employee.firstName}}</div>-->
+<!--<div><span>lastname: </span>{{employee.lastName}}</div>-->
+<!--<div><span>email: </span>{{employee.email}}</div>-->
+<!--<div>-->
+<!--  <label for="firstName">Employee firstname: </label>-->
+<!--  <input id="firstName" [(ngModel)]="employee.firstName" placeholder="firstname">-->
+<!--</div>-->
 
 
