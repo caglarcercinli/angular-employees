@@ -1,0 +1,9 @@
+<div *ngIf="employee">
+  <h2>{{employee.firstName | uppercase}} Details</h2>
+  <div><span>id: </span>{{employee.id}}</div>
+  <div>
+    <label for="employee-email">Employee email: </label>
+    <input id="employee-email" [(ngModel)]="employee.email"
+           placeholder="email">
+  </div>
+</div>

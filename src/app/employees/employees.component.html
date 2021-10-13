@@ -5,15 +5,16 @@
     <span class="badge">{{employee.id}}</span>
     {{employee.firstName}} {{employee.lastName}}
   </li>
-  <div *ngIf="selectedEmployee">
-    <h2>{{selectedEmployee.firstName | uppercase}} Details</h2>
-    <div><span>id: </span>{{selectedEmployee.id}}</div>
-    <div>
-      <label for="employee-email">Employee email: </label>
-      <input id="employee-email" [(ngModel)]="selectedEmployee.email"
-             placeholder="email">
-    </div>
-  </div>
+  <app-employee-detail [employee]="selectedEmployee"></app-employee-detail>
+<!--  <div *ngIf="selectedEmployee">-->
+<!--    <h2>{{selectedEmployee.firstName | uppercase}} Details</h2>-->
+<!--    <div><span>id: </span>{{selectedEmployee.id}}</div>-->
+<!--    <div>-->
+<!--      <label for="employee-email">Employee email: </label>-->
+<!--      <input id="employee-email" [(ngModel)]="selectedEmployee.email"-->
+<!--             placeholder="email">-->
+<!--    </div>-->
+<!--  </div>-->
 </ul>
 <!--<h2>{{employee.firstName|uppercase}} Details</h2>-->
 <!--<div><span>id: </span>{{employee.id}}</div>-->
