@@ -1,28 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+
 import {Employee } from '../employee';
-import { EMPLOYEES } from '../mock-employees';
+// import { EMPLOYEES } from '../mock-employees';
+import { EmployeeService } from '../employee.service';
+
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-  employees = EMPLOYEES;
-//   employee : Employee={
-//     id: 1,
-//     firstName: 'Caglar',
-//     lastName:'Cercinli',
-//     email:'caglar@mail.com',
-//     password:'caglar'
-// };
-  selectedEmployee?: Employee;
-  onSelect(employee: Employee): void {
-    this.selectedEmployee = employee;
-  }
 
-  constructor() { }
+  selectedEmployee?: Employee;
+
+  employees : Employee[]=[];
+
+  constructor(private employeeService:EmployeeService) { }
 
   ngOnInit(): void {
+    this.getEmployees();
+  }
+  onSelect(employee:Employee):void{
+    this.selectedEmployee=employee;
+  }
+  getEmployees():void {
+    this.employeeService.getEmployees()
+      .subscribe(employees=>this.employees=employees);
   }
 
 }
