@@ -16,4 +16,10 @@ export class EmployeeService {
     const employees = of(EMPLOYEES);
     return employees;
   }
+  getEmployee(id: number): Observable<Employee> {
+    // For now, assume that a hero with the specified `id` always exists.
+    // Error handling will be added in the next step of the tutorial.
+    const employee = EMPLOYEES.find(h => h.id === id)!;
+    return of(employee);
+  }
 }

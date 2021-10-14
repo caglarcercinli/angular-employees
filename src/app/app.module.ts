@@ -6,15 +6,22 @@ import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
